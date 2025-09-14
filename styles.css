@@ -1,0 +1,332 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #004a99, #0071c5);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Fix Intel logo proportions */
+.logo {
+  height: 60px;   /* or whatever size works best */
+  width: auto;    /* auto ensures it doesn’t stretch */
+  object-fit: contain;
+}
+
+
+.mission-text {
+  max-width: 800px;
+  margin: 15px auto;
+  font-size: 1.1rem;
+}
+
+.mission-subtext {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Timeline Section */
+.timeline-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.timeline-heading {
+  font-size: 1.8rem;
+  color: #004a99;
+  margin-bottom: 20px;
+}
+
+.timeline-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Flip */
+.card {
+  width: 240px;
+  height: 340px;
+  perspective: 1000px;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 15px;
+}
+
+.card-front img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin: 10px 0;
+}
+
+.card-back {
+  background: #0071c5;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.highlight {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Arrows */
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: #0071c5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.left-btn { left: 10px; }
+.right-btn { right: 10px; }
+
+/* Footer */
+footer {
+  background: #00264d;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+}
+/* =========================
+   Milestone Page Styling
+   ========================= */
+
+/* Hero section for milestone page */
+.hero {
+  background: linear-gradient(135deg, #0047ab, #0071c5);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero .logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  margin: 10px 0;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+/* Main milestone content */
+.milestone-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
+}
+
+.milestone-content h2 {
+  font-size: 1.8rem;
+  color: #0047ab;
+  margin-bottom: 10px;
+}
+
+.milestone-content h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+  font-weight: normal;
+}
+
+.milestone-content h4 {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #0047ab;
+}
+
+.milestone-content p,
+.milestone-content ul {
+  font-size: 1rem;
+  color: #222;
+  margin-top: 10px;
+}
+
+.milestone-content ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+/* Back link */
+.back-link {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0047ab;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+/* Fix Back to Timeline link visibility */
+.back-link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;   /* White text */
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #00bfff;   /* Light blue highlight on hover */
+  text-decoration: underline;
+}
+/* Back to Timeline link fix */
+.back-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.back-link a {
+  color: #ffffff !important;   /* Force white text */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #00bfff !important;   /* Light blue when hovered */
+  text-decoration: underline;
+}
+/* Footer Styling */
+.footer {
+  background-color: #00285f; /* Dark Intel blue */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Back to Timeline link */
+.footer .back-link {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff !important;   /* Force white */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer .back-link:hover {
+  color: #00bfff !important;   /* Bright blue hover */
+  text-decoration: underline;
+}
+/* Footer Styling */
+.footer {
+  background-color: #00285f; /* Dark Intel blue */
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+/* Back to Timeline link */
+.footer .back-link {
+  display: block;
+  margin-bottom: 10px;
+  color: #ffffff !important;   /* Force white */
+  font-weight: normal;         /* Default normal */
+  text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.footer .back-link:hover,
+.footer .back-link:active {
+  color: #00bfff !important;   /* Bright blue hover/click */
+  font-weight: bold;           /* Bold when hover or click */
+  text-decoration: underline;
+}
+/* Make hover/click instructions bold and readable */
+.hero-section p {
+  font-weight: bold;
+  color: #fff; /* ensure it's visible on the blue background */
+}
+
+.hero-section p em {
+  font-weight: bold;
+  font-style: italic;
+}
+.instructions-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.instructions {
+  font-size: 1.1rem;
+  color: #333;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+
+
+
