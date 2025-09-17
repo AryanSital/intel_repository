@@ -413,34 +413,41 @@ html[dir="rtl"] #lang-switcher { direction: rtl; }
   display: block;
   margin: 0 auto 15px auto;
 }
-/* Ensure hero is relative so dropdown anchors inside */
+/* Keep hero as the positioning context */
 .hero {
   position: relative;
 }
 
-/* Google Translate dropdown styling */
+/* Pin the Google Translate container to the top-right of the hero */
 #google_translate_element {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  z-index: 999;
+  position: absolute !important;
+  top: 15px !important;
+  right: 20px !important;
+  left: auto !important;
+  width: auto !important;
+  margin: 0 !important;
+  text-align: right !important;
+  z-index: 9999 !important;
 }
 
+/* Make the widget sit inline and not center itself */
 .goog-te-gadget {
-  font-family: inherit !important;
-  font-size: 0.9rem !important;
-  color: #000 !important; /* Black text */
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.goog-te-gadget select {
-  padding: 6px 10px !important;
-  border-radius: 6px;
+/* Style the simple dropdown (black text on white) */
+.goog-te-gadget-simple {
+  background: #fff !important;
   border: 1px solid #ccc !important;
-  background: #fff !important;   /* White background */
-  color: #000 !important;        /* Black text */
-  font-weight: 500;
-  cursor: pointer;
+  border-radius: 6px !important;
+  padding: 6px 10px !important;
+  color: #000 !important;
+  font-weight: 500 !important;
 }
+
+
 
 
 
