@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
 
-  // Milestone data
+  // Milestone data (UNCHANGED from your version)
   const milestones = {
     "1968": {
       title: "1968: Intel Founded",
@@ -159,9 +159,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Load milestone data
+  // Optional language overrides (if you later add translations in i18n.js)
+  const lang = (localStorage.getItem('site_lang') || document.documentElement.lang || 'en').slice(0,2);
+  const pack = (window.I18N && I18N.milestones && I18N.milestones[lang]) ? I18N.milestones[lang] : null;
+
   if (milestones[id]) {
-    const m = milestones[id];
+    const base = milestones[id];
+    const m = {
+      title: (pack && pack[id]?.title) || base.title,
+      subtitle: (pack && pack[id]?.subtitle) || base.subtitle,
+      overview: (pack && pack[id]?.overview) || base.overview,
+      actions: (pack && pack[id]?.actions) || base.actions,
+      impact: (pack && pack[id]?.impact) || base.impact
+    };
+
     document.getElementById("milestone-title").textContent = m.title;
     document.getElementById("milestone-subtitle").textContent = m.subtitle;
     document.getElementById("milestone-overview").textContent = m.overview;
@@ -176,8 +187,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("milestone-impact").textContent = m.impact;
   } else {
-    document.getElementById("milestone-title").textContent = "Milestone Not Found";
-    document.getElementById("milestone-overview").textContent = "Sorry, we couldn’t find details for this milestone.";
+    document.getElementById("milestone-title").textContent = I18N?.en?.milestoneNotFoundTitle || "Milestone Not Found";
+    document.getElementById("milestone-overview").textContent = I18N?.en?.milestoneNotFoundBody || "Sorry, we couldn’t find details for this milestone.";
   }
 });
 

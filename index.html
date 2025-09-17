@@ -10,7 +10,11 @@
 </head>
 <body>
   <!-- Hero Section -->
-  <header class="hero">
+  <header class="hero index-hero">
+    <!-- Google Translate dropdown (floats top-right) -->
+    <div id="google_translate_element" class="lang-wrapper"></div>
+
+    <!-- Centered Logo + Title -->
     <img src="images/intel-logo.png" alt="Intel Logo" class="logo">
     <h1>Intel’s Journey to a Sustainable Future</h1>
     <p>
@@ -18,193 +22,206 @@
     </p>
   </header>
 
-  <!-- Timeline Section -->
-<div class="instructions-section">
-  <p class="instructions">
-    <em>Hover over each milestone to see a quick highlight.<br>
-    Click a card to explore the full story behind each achievement.</em>
-  </p>
-</div>
+  <!-- Instructions Section -->
+  <div class="instructions-section">
+    <p class="instructions">
+      <em>Hover over each milestone to see a quick highlight.<br>
+      Click a card to explore the full story behind each achievement.</em>
+    </p>
+  </div>
 
-      <!-- Left Arrow -->
-      <button class="scroll-btn left-btn">&#10094;</button>
+  <!-- Left Arrow -->
+  <button class="scroll-btn left-btn" aria-label="Scroll left">&#10094;</button>
 
-      <!-- Cards -->
-      <div class="cards-wrapper">
-        <!-- 1968 -->
-        <div class="card" onclick="goToMilestone('1968')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>1968</h3>
-              <p><strong>Intel Founded</strong></p>
-              <img src="images/intel-founded.jpg" alt="Intel Founded">
-              <p class="highlight">Robert Noyce and Gordon Moore found Intel in California.</p>
-            </div>
-            <div class="card-back">
-              <p>Intel begins as “Integrated Electronics,” aiming to revolutionize semiconductors with just 12 engineers.</p>
-            </div>
-          </div>
+  <!-- Cards Wrapper -->
+  <div class="cards-wrapper">
+    <!-- === All milestone cards (1968 → 2050) === -->
+    <!-- 1968 -->
+    <div class="card" onclick="goToMilestone('1968')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>1968</h3>
+          <p><strong>Intel Founded</strong></p>
+          <img src="images/intel-founded.jpg" alt="Intel Founded">
+          <p class="highlight">Robert Noyce and Gordon Moore found Intel in California.</p>
         </div>
-
-        <!-- 1971 -->
-        <div class="card" onclick="goToMilestone('1971')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>1971</h3>
-              <p><strong>First Microprocessor</strong></p>
-              <img src="images/intel-4004.jpg" alt="Intel 4004 Processor">
-              <p class="highlight">Intel launches the 4004, the world’s first microprocessor.</p>
-            </div>
-            <div class="card-back">
-              <p>The Intel 4004 chip contained 2,300 transistors and sparked the microprocessor revolution.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1978 -->
-        <div class="card" onclick="goToMilestone('1978')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>1978</h3>
-              <p><strong>8086 Processor</strong></p>
-              <img src="images/8086-processor.jpg" alt="8086 Processor">
-              <p class="highlight">Launched the 8086, foundation of the x86 architecture.</p>
-            </div>
-            <div class="card-back">
-              <p>The Intel 8086 chip powered IBM PCs and set the industry standard.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 1980s -->
-        <div class="card" onclick="goToMilestone('1980s')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>1980s–2000s</h3>
-              <p><strong>PC Revolution</strong></p>
-              <img src="images/intel-pc.jpg" alt="PC Revolution">
-              <p class="highlight">Intel powers the rise of personal computers worldwide.</p>
-            </div>
-            <div class="card-back">
-              <p>The Pentium and x86 chips became household names during the PC boom.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2016 -->
-        <div class="card" onclick="goToMilestone('2016')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2016</h3>
-              <p><strong>Conflict-Free Processors</strong></p>
-              <img src="images/conflict-free.jpg" alt="Conflict-Free Processors">
-              <p class="highlight">Intel delivers processors made with responsibly sourced minerals.</p>
-            </div>
-            <div class="card-back">
-              <p>Intel becomes the first to ship conflict-free microprocessors worldwide.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2022 -->
-        <div class="card" onclick="goToMilestone('2022')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2022</h3>
-              <p><strong>Net-Zero Pledge</strong></p>
-              <img src="images/netzero-pledge.jpg" alt="Net-Zero Pledge">
-              <p class="highlight">Intel commits to net-zero operational emissions by 2040.</p>
-            </div>
-            <div class="card-back">
-              <p>Intel targets Scope 1 and 2 emissions reductions with renewable power and efficiency.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2023 -->
-        <div class="card" onclick="goToMilestone('2023')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2023</h3>
-              <p><strong>Measurable Progress</strong></p>
-              <img src="images/progress-2023.jpg" alt="Progress in 2023">
-              <p class="highlight">Intel makes big gains in renewable energy and water restoration.</p>
-            </div>
-            <div class="card-back">
-              <p>Intel achieves &gt;90% renewable electricity and net-positive water in the U.S.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2025 -->
-        <div class="card" onclick="goToMilestone('2025')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2025</h3>
-              <p><strong>99% Renewable</strong></p>
-              <img src="images/renewable-2025.jpg" alt="99% Renewable">
-              <p class="highlight">Intel operates on 99% renewable electricity worldwide.</p>
-            </div>
-            <div class="card-back">
-              <p>Reaching 99% renewable power puts Intel on track for its 2030 targets.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2030 -->
-        <div class="card" onclick="goToMilestone('2030')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2030</h3>
-              <p><strong>Zero Waste Goal</strong></p>
-              <img src="images/2030-goal.jpg" alt="Zero Waste Goal">
-              <p class="highlight">Intel targets 100% renewable electricity and zero waste to landfill.</p>
-            </div>
-            <div class="card-back">
-              <p>By 2030, Intel plans to eliminate landfill waste and expand circular economy practices.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2040 -->
-        <div class="card" onclick="goToMilestone('2040')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2040</h3>
-              <p><strong>Net-Zero Operations</strong></p>
-              <img src="images/2040-netzero.jpg" alt="Net-Zero Operations">
-              <p class="highlight">Intel reaches complete net-zero Scope 1 &amp; 2 emissions.</p>
-            </div>
-            <div class="card-back">
-              <p>Factories and offices run entirely on renewable power and efficiency improvements.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2050 -->
-        <div class="card" onclick="goToMilestone('2050')">
-          <div class="card-inner">
-            <div class="card-front">
-              <h3>2050</h3>
-              <p><strong>Supply Chain Net-Zero</strong></p>
-              <img src="images/2050-supplychain.jpg" alt="Supply Chain Net-Zero">
-              <p class="highlight">Intel commits to net-zero across its global supply chain.</p>
-            </div>
-            <div class="card-back">
-              <p>Intel’s Scope 3 emissions goal ensures suppliers and partners are part of the mission.</p>
-            </div>
-          </div>
+        <div class="card-back">
+          <p>Intel begins as “Integrated Electronics,” aiming to revolutionize semiconductors with just 12 engineers.</p>
         </div>
       </div>
-
-      <!-- Right Arrow -->
-      <button class="scroll-btn right-btn">&#10095;</button>
     </div>
-  </section>
+
+    <!-- 1971 -->
+    <div class="card" onclick="goToMilestone('1971')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>1971</h3>
+          <p><strong>First Microprocessor</strong></p>
+          <img src="images/intel-4004.jpg" alt="Intel 4004 Processor">
+          <p class="highlight">Intel launches the 4004, the world’s first microprocessor.</p>
+        </div>
+        <div class="card-back">
+          <p>The Intel 4004 chip contained 2,300 transistors and sparked the microprocessor revolution.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1978 -->
+    <div class="card" onclick="goToMilestone('1978')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>1978</h3>
+          <p><strong>8086 Processor</strong></p>
+          <img src="images/8086-processor.jpg" alt="8086 Processor">
+          <p class="highlight">Launched the 8086, foundation of the x86 architecture.</p>
+        </div>
+        <div class="card-back">
+          <p>The Intel 8086 chip powered IBM PCs and set the industry standard.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1980s -->
+    <div class="card" onclick="goToMilestone('1980s')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>1980s–2000s</h3>
+          <p><strong>PC Revolution</strong></p>
+          <img src="images/intel-pc.jpg" alt="PC Revolution">
+          <p class="highlight">Intel powers the rise of personal computers worldwide.</p>
+        </div>
+        <div class="card-back">
+          <p>The Pentium and x86 chips became household names during the PC boom.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2016 -->
+    <div class="card" onclick="goToMilestone('2016')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2016</h3>
+          <p><strong>Conflict-Free Processors</strong></p>
+          <img src="images/conflict-free.jpg" alt="Conflict-Free Processors">
+          <p class="highlight">Intel delivers processors made with responsibly sourced minerals.</p>
+        </div>
+        <div class="card-back">
+          <p>Intel becomes the first to ship conflict-free microprocessors worldwide.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="card" onclick="goToMilestone('2022')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2022</h3>
+          <p><strong>Net-Zero Pledge</strong></p>
+          <img src="images/netzero-pledge.jpg" alt="Net-Zero Pledge">
+          <p class="highlight">Intel commits to net-zero operational emissions by 2040.</p>
+        </div>
+        <div class="card-back">
+          <p>Intel targets Scope 1 and 2 emissions reductions with renewable power and efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="card" onclick="goToMilestone('2023')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2023</h3>
+          <p><strong>Measurable Progress</strong></p>
+          <img src="images/progress-2023.jpg" alt="Progress in 2023">
+          <p class="highlight">Intel makes big gains in renewable energy and water restoration.</p>
+        </div>
+        <div class="card-back">
+          <p>Intel achieves &gt;90% renewable electricity and net-positive water in the U.S.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="card" onclick="goToMilestone('2025')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2025</h3>
+          <p><strong>99% Renewable</strong></p>
+          <img src="images/renewable-2025.jpg" alt="99% Renewable">
+          <p class="highlight">Intel operates on 99% renewable electricity worldwide.</p>
+        </div>
+        <div class="card-back">
+          <p>Reaching 99% renewable power puts Intel on track for its 2030 targets.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2030 -->
+    <div class="card" onclick="goToMilestone('2030')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2030</h3>
+          <p><strong>Zero Waste Goal</strong></p>
+          <img src="images/2030-goal.jpg" alt="Zero Waste Goal">
+          <p class="highlight">Intel targets 100% renewable electricity and zero waste to landfill.</p>
+        </div>
+        <div class="card-back">
+          <p>By 2030, Intel plans to eliminate landfill waste and expand circular economy practices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2040 -->
+    <div class="card" onclick="goToMilestone('2040')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2040</h3>
+          <p><strong>Net-Zero Operations</strong></p>
+          <img src="images/2040-netzero.jpg" alt="Net-Zero Operations">
+          <p class="highlight">Intel reaches complete net-zero Scope 1 &amp; 2 emissions.</p>
+        </div>
+        <div class="card-back">
+          <p>Factories and offices run entirely on renewable power and efficiency improvements.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2050 -->
+    <div class="card" onclick="goToMilestone('2050')">
+      <div class="card-inner">
+        <div class="card-front">
+          <h3>2050</h3>
+          <p><strong>Supply Chain Net-Zero</strong></p>
+          <img src="images/2050-supplychain.jpg" alt="Supply Chain Net-Zero">
+          <p class="highlight">Intel commits to net-zero across its global supply chain.</p>
+        </div>
+        <div class="card-back">
+          <p>Intel’s Scope 3 emissions goal ensures suppliers and partners are part of the mission.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Arrow -->
+  <button class="scroll-btn right-btn" aria-label="Scroll right">&#10095;</button>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Intel Corporation | Sustainability Journey Project</p>
   </footer>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+          pageLanguage: 'en',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
