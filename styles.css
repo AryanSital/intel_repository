@@ -316,6 +316,26 @@ footer {
   border-radius: 6px !important;
   border: 1px solid #ccc !important;
 }
+/* Force the Google Translate iframe menu to stay narrow and scroll */
+.goog-te-menu-frame {
+  position: fixed !important;
+  top: 60px !important;        /* below your hero bar */
+  right: 20px !important;      /* stick to right side */
+  width: 220px !important;     /* narrow width */
+  height: 300px !important;    /* fixed height */
+  overflow-y: auto !important; /* enable vertical scroll */
+  overflow-x: hidden !important;
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important;
+  z-index: 99999 !important;
+}
+
+/* Ensure the inner menu also scrolls */
+.goog-te-menu2 {
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
 
 
 
