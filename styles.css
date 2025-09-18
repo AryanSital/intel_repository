@@ -11,6 +11,7 @@
   color: white;
   text-align: center;
   padding: 60px 20px;
+  position: relative; /* Needed for translate dropdown positioning */
 }
 
 /* Fix Intel logo proportions */
@@ -145,6 +146,7 @@ footer {
   padding: 15px 0;
   font-size: 0.9rem;
 }
+
 /* =========================
    Milestone Page Styling
    ========================= */
@@ -227,58 +229,7 @@ footer {
 .back-link a:hover {
   text-decoration: underline;
 }
-/* Fix Back to Timeline link visibility */
-.back-link a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #ffffff;   /* White text */
-  transition: color 0.3s ease;
-}
 
-.back-link a:hover {
-  color: #00bfff;   /* Light blue highlight on hover */
-  text-decoration: underline;
-}
-/* Back to Timeline link fix */
-.back-link {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.back-link a {
-  color: #ffffff !important;   /* Force white text */
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.back-link a:hover {
-  color: #00bfff !important;   /* Light blue when hovered */
-  text-decoration: underline;
-}
-/* Footer Styling */
-.footer {
-  background-color: #00285f; /* Dark Intel blue */
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-/* Back to Timeline link */
-.footer .back-link {
-  display: block;
-  margin-bottom: 10px;
-  color: #ffffff !important;   /* Force white */
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer .back-link:hover {
-  color: #00bfff !important;   /* Bright blue hover */
-  text-decoration: underline;
-}
 /* Footer Styling */
 .footer {
   background-color: #00285f; /* Dark Intel blue */
@@ -304,16 +255,18 @@ footer {
   font-weight: bold;           /* Bold when hover or click */
   text-decoration: underline;
 }
-/* Make hover/click instructions bold and readable */
+
+/* Instructions styling */
 .hero-section p {
   font-weight: bold;
-  color: #fff; /* ensure it's visible on the blue background */
+  color: #fff;
 }
 
 .hero-section p em {
   font-weight: bold;
   font-style: italic;
 }
+
 .instructions-section {
   text-align: center;
   margin: 30px 0;
@@ -327,144 +280,42 @@ footer {
 }
 
 /* =========================
-   NEW UPDATES APPENDED
+   Google Translate Styling
    ========================= */
 
-/* Visually hidden for a11y */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px; overflow: hidden;
-  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
-}
-
-/* Topbar (logo left, language switcher right) */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto 20px;
-  padding: 0 16px;
-}
-
-.lang-wrapper select,
-#lang-switcher {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-}
-
-/* Keyboard focus for cards */
-.card:focus {
-  outline: 3px solid #00bfff;
-  outline-offset: 2px;
-}
-
-/* Mobile: vertical stack so the page scrolls vertically */
-@media (max-width: 768px) {
-  .cards-wrapper {
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
-    align-items: center;
-  }
-  .card {
-    width: 90%;
-    max-width: 360px;
-    margin-bottom: 20px;
-  }
-  .scroll-btn { display: none; }
-}
-
-/* Smooth horizontal feel + reduced motion */
-.cards-wrapper { scroll-snap-type: x mandatory; }
-.card { scroll-snap-align: start; }
-
-@media (prefers-reduced-motion: reduce) {
-  .card-inner { transition: none; }
-  .cards-wrapper { scroll-behavior: auto; }
-}
-
-/* RTL adjustments */
-html[dir="rtl"] .cards-wrapper { direction: rtl; }
-html[dir="rtl"] .left-btn { right: 10px; left: auto; }
-html[dir="rtl"] .right-btn { left: 10px; right: auto; }
-html[dir="rtl"] #lang-switcher { direction: rtl; }
-/* Language switcher floats top-right */
-.lang-wrapper {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-}
-
-.lang-wrapper select {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.4);
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-}
-
-/* Keep logo centered */
-.hero .logo {
-  display: block;
-  margin: 0 auto 15px auto;
-}
-/* Keep hero as the positioning context */
-.hero {
-  position: relative;
-}
-
-/* Pin the Google Translate container to the top-right of the hero */
+/* Pin dropdown in top-right corner */
 #google_translate_element {
   position: absolute !important;
   top: 15px !important;
   right: 20px !important;
-  left: auto !important;
+  z-index: 9999 !important;
   width: auto !important;
   margin: 0 !important;
   text-align: right !important;
-  z-index: 9999 !important;
 }
 
-/* Make the widget sit inline and not center itself */
-.goog-te-gadget {
-  display: inline-block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Style the simple dropdown (black text on white) */
+/* Dropdown button (Select Language) */
 .goog-te-gadget-simple {
-  background: #fff !important;
-  border: 1px solid #ccc !important;
+  background-color: #0047ab !important; /* Intel blue */
+  border: 1px solid #00285f !important;
   border-radius: 6px !important;
-  padding: 6px 10px !important;
-  color: #000 !important;
-  font-weight: 500 !important;
-}
-/* Limit the Google Translate language list height */
-.goog-te-menu2 {
-  max-height: 250px !important; /* Limit dropdown height */
-  overflow-y: auto !important;  /* Enable vertical scroll */
-  overflow-x: hidden !important;
+  padding: 6px 12px !important;
+  cursor: pointer !important;
 }
 
-/* Style scrollbar (optional for modern browsers) */
-.goog-te-menu2::-webkit-scrollbar {
-  width: 8px;
-}
-.goog-te-menu2::-webkit-scrollbar-thumb {
-  background-color: #999;
-  border-radius: 4px;
-}
-.goog-te-menu2::-webkit-scrollbar-thumb:hover {
-  background-color: #666;
+.goog-te-gadget-simple span {
+  color: #fff !important; /* White text */
+  font-weight: bold !important;
+  font-size: 0.9rem !important;
 }
 
+/* Scroll fix for language list inside iframe */
+.goog-te-menu-frame {
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  border-radius: 6px !important;
+  border: 1px solid #ccc !important;
+}
 
 
 
