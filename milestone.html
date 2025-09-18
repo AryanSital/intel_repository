@@ -62,5 +62,31 @@
     }
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+  function fixGoogleTranslateIframe() {
+    const interval = setInterval(() => {
+      let iframe = document.querySelector('.goog-te-menu-frame');
+      if (iframe) {
+        let innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        if (innerDoc) {
+          let styleTag = innerDoc.createElement('style');
+          styleTag.innerHTML = `
+            body {
+              max-height: 300px !important;
+              overflow-y: auto !important;
+              overflow-x: hidden !important;
+              -webkit-overflow-scrolling: touch !important; /* enables smooth trackpad scrolling on Mac */
+            }
+          `;
+          innerDoc.head.appendChild(styleTag);
+          clearInterval(interval); // stop checking once applied
+        }
+      }
+    }, 500);
+  }
+
+  // Run whenever user opens dropdown
+  document.addEventListener("click", fixGoogleTranslateIframe);
+</script>
 </body>
 </html>
