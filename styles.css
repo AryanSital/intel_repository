@@ -446,6 +446,24 @@ html[dir="rtl"] #lang-switcher { direction: rtl; }
   color: #000 !important;
   font-weight: 500 !important;
 }
+/* Limit the Google Translate language list height */
+.goog-te-menu2 {
+  max-height: 250px !important; /* Limit dropdown height */
+  overflow-y: auto !important;  /* Enable vertical scroll */
+  overflow-x: hidden !important;
+}
+
+/* Style scrollbar (optional for modern browsers) */
+.goog-te-menu2::-webkit-scrollbar {
+  width: 8px;
+}
+.goog-te-menu2::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 4px;
+}
+.goog-te-menu2::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
 
 
 
